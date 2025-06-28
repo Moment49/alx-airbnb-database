@@ -4,7 +4,7 @@ This document outlines the foundational database structure for an Airbnb clone. 
 
 
 ## 🗺️ ER DIAGRAM
-![Airbnb Database ERD](https://github.com/user-attachments/assets/50e07f74-f5b5-4393-ae25-2a6ead356f54)
+![Airbnb Database ERD](https://github.com/Moment49/alx-airbnb-database/blob/main/ERD/ERD%20-%20AirBnB.jpg)
 
 
 
