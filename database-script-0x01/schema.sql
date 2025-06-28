@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS property(
     name VARCHAR(128) NOT NULL,
     description TEXT NOT NULL,
     address VARCHAR(256) NOT NULL,
-    pricepernight DECIMAL(3,2) NOT NULL,
+    pricepernight DECIMAL(5,2) NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (host_id) REFERENCES users(user_id)
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS booking(
     user_id CHAR(60) NOT NULL,
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
-    total_price DECIMAL(3,2) NOT NULL,
+    total_price DECIMAL(5,2) NOT NULL,
     status ENUM('pending', 'confirmed', 'canceled') NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS message(
 CREATE TABLE IF NOT EXISTS payment(
     payment_id CHAR(60) UNIQUE PRIMARY KEY,
     booking_id CHAR(60) NOT NULL,
-    amount DECIMAL (3, 2) NOT NULL,
+    amount DECIMAL (5, 2) NOT NULL,
     payment_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     payment_method ENUM('credit_card', 'paypal', 'stripe') NOT NULL
 )
