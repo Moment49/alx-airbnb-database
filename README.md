@@ -1,1 +1,1 @@
-## This is a Robust Database ER diagram and Schema Setup for an AirBnB clone Project for ALX Backend Prodev
+## Robust Database ER Diagram and Schema Design for an Airbnb Clone – ALX Backend ProDev Project
