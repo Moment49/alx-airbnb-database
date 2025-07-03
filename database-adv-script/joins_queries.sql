@@ -21,7 +21,8 @@ ON (b.user_id = u.user_id);
 SELECT p.property_id, p.host_id, p.name, p.description, p.address, p.pricepernight, r.review_id, r.rating, r.comment, r.user_id
 FROM property p
 LEFT JOIN review r
-ON (p.property_id = r.property_id);
+ON (p.property_id = r.property_id)
+ORDER BY r.rating DESC;
 
 -- FULL OUTER JOIN to get retrieve all users and bookings even if user does not have booking and vise versa
 SELECT u.user_id, u.first_name, u.last_name, u.role, b.booking_id, b.property_id, b.total_price, b.status
