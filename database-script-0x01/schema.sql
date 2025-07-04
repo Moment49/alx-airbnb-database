@@ -87,3 +87,5 @@ ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
 
 -- Show the tables in the database
 SHOW TABLES;
+
+DROP TABLE payment
