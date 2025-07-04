@@ -14,6 +14,7 @@ SELECT * from booking;
 SELECT property_id, name FROM property;
 
 SELECT property_id, COUNT(booking_id) as totalBooking,
-  RANK() OVER (ORDER BY COUNT(booking_id) DESC) 
+  RANK() OVER (ORDER BY COUNT(booking_id) DESC), 
+  ROW_NUMBER() OVER (ORDER BY COUNT(booking_id) DESC) 
 from booking
 GROUP BY property_id;
