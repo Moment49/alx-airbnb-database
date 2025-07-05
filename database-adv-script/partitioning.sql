@@ -40,9 +40,11 @@ INSERT into booking (
 (2, 2, 21, '2022-07-01', '2021-07-05', 180.00, 'confirmed');
 
 
--- Alternative to add the partition to an existing table, note that the 
--- table has no primary key as partitions to a PRIMARY KEY column not the partitioned column will be flagged
--- As the sql would not know how to partition the table without a primary key for the column
+-- Alternative: to add partitioning to an existing table, note that
+-- the table must not have a PRIMARY KEY or UNIQUE index that excludes the partitioning column.
+-- MySQL requires that all columns used in the PARTITION BY clause must be included in every PRIMARY or UNIQUE key.
+-- Otherwise, the operation will be flagged as an error because SQL cannot guarantee row uniqueness across partitions.
+
 ALTER TABLE booking PARTITION BY RANGE(YEAR(start_date))(
     PARTITION p2021 VALUES LESS THAN (2021),
     PARTITION p2022 VALUES LESS THAN (2022),
