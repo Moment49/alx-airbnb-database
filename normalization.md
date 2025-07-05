@@ -35,4 +35,4 @@ The goal is to ensure the Airbnb clone database schema adheres to the Third Norm
 ---
 
 **Conclusion:**  
-The Airbnb clone database schema is structured to fully comply with 3NF, ensuring efficient storage, data consistency, and ease of
+The Airbnb clone database schema is structured to fully comply with 3NF, ensuring efficient storage, and data consistency
